@@ -12,6 +12,11 @@ export interface SettingsToggleButtonConfig extends ToggleButtonConfig {
   settingsPanel: SettingsPanel;
 
   /**
+   * Other panel that the button might close but not open
+   */
+  otherPanels?: SettingsPanel[];
+
+  /**
    * Decides if the button should be automatically hidden when the settings panel does not contain any active settings.
    * Default: true
    */
@@ -34,6 +39,7 @@ export class SettingsToggleButton extends ToggleButton<SettingsToggleButtonConfi
       cssClass: 'ui-settingstogglebutton',
       text: 'Settings',
       settingsPanel: null,
+      otherPanels: [],
       autoHideWhenNoActiveSettings: true,
     }, <SettingsToggleButtonConfig>this.config);
   }
@@ -45,6 +51,12 @@ export class SettingsToggleButton extends ToggleButton<SettingsToggleButtonConfi
     let settingsPanel = config.settingsPanel;
 
     this.onClick.subscribe(() => {
+      for (let panel of config.otherPanels) {
+        if (panel.isShown()) {
+          panel.hide()
+          return;
+        }
+      }
       settingsPanel.toggleHidden();
     });
     settingsPanel.onShow.subscribe(() => {

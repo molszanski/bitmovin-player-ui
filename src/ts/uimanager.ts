@@ -456,7 +456,10 @@ export namespace UIManager.Factory {
             new AirPlayToggleButton(),
             new CastToggleButton(),
             new VRToggleButton(),
-            new SettingsToggleButton({ settingsPanel: settingsPanel }),
+            new SettingsToggleButton({
+              settingsPanel: settingsPanel,
+              otherPanels: [subtitleSettingsPanel],
+            }),
             new FullscreenToggleButton(),
           ],
           cssClasses: ['controlbar-bottom'],
@@ -573,7 +576,10 @@ export namespace UIManager.Factory {
             new MetadataLabel({ content: MetadataLabelContent.Title }),
             new CastToggleButton(),
             new VRToggleButton(),
-            new SettingsToggleButton({ settingsPanel: settingsPanel }),
+            new SettingsToggleButton({
+              settingsPanel: settingsPanel,
+              otherPanels: [subtitleSettingsPanel],
+            }),
             new FullscreenToggleButton(),
           ],
         }),
