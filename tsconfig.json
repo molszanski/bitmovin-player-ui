@@ -7,6 +7,12 @@
     "target": "es5",
     "declaration": true,
     "outDir": "dist/js/framework",
-    "lib": ["es6", "dom", "scripthost"]
-  }
+    "lib": ["es6", "dom", "scripthost"],
+    "jsx": "react",
+    "jsxFactory": "h"
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ]
 }

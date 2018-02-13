@@ -28,6 +28,7 @@ import {CastToggleButton} from './components/casttogglebutton';
 import {CastStatusOverlay} from './components/caststatusoverlay';
 import {ErrorMessageOverlay} from './components/errormessageoverlay';
 import {TitleBar} from './components/titlebar';
+import {TitleBarReact} from './components/titlebar_r';
 import PlayerAPI = bitmovin.PlayerAPI;
 import {RecommendationOverlay} from './components/recommendationoverlay';
 import {AdMessageLabel} from './components/admessagelabel';
@@ -478,7 +479,8 @@ export namespace UIManager.Factory {
         new PlaybackToggleOverlay(),
         new CastStatusOverlay(),
         controlBar,
-        new TitleBar(),
+        // new TitleBar(),
+        new TitleBarReact(),
         new RecommendationOverlay(),
         new Watermark(),
         new ErrorMessageOverlay(),

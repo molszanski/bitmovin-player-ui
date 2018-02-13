@@ -9,7 +9,7 @@ export interface ContainerConfig extends ComponentConfig {
   /**
    * Child components of the container.
    */
-  components?: Component<ComponentConfig>[];
+  components?: any[];
 }
 
 /**
