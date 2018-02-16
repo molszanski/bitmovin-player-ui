@@ -12,7 +12,8 @@ import {ControlBar} from './components/controlbar';
 import {NoArgs, EventDispatcher, CancelEventArgs} from './eventdispatcher';
 import {SettingsToggleButton} from './components/settingstogglebutton';
 import {SettingsPanel, SettingsPanelItem} from './components/settingspanel';
-import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel';
+// import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel';
+import {SubtitleSettingsPanelReact as SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel_r';
 import {SubtitleSettingsLabel} from './components/subtitlesettings/subtitlesettingslabel';
 import {SubtitleSettingsOpenButton} from './components/subtitlesettings/subtitlesettingsopenbutton';
 import {VideoQualitySelectBox} from './components/videoqualityselectbox';
@@ -431,6 +432,7 @@ export namespace UIManager.Factory {
       settingsPanel: settingsPanel,
     });
 
+    // @ts-ignore
     let subtitleSettingsOpenButton = new SubtitleSettingsOpenButton({
       subtitleSettingsPanel: subtitleSettingsPanel,
       settingsPanel: settingsPanel,
@@ -542,6 +544,7 @@ export namespace UIManager.Factory {
       settingsPanel: settingsPanel,
     });
 
+    // @ts-ignore
     let subtitleSettingsOpenButton = new SubtitleSettingsOpenButton({
       subtitleSettingsPanel: subtitleSettingsPanel,
       settingsPanel: settingsPanel,
