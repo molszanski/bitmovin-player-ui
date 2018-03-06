@@ -9,7 +9,6 @@
     "no-trailing-whitespace": true,
     "no-var-keyword": false,
     "one-line": [true, "check-open-brace", "check-whitespace"],
-    "quotemark": [true, "single"],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": [true, {
