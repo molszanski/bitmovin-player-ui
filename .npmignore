@@ -1,1 +1,4 @@
 .idea
+# Exclude everything but dist
+**/*
+!dist/**

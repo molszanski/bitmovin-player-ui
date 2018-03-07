@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "gulp npm-prepare",
     "style": "styleguidist --config ./scripts/styleguide.config.js server",
-    "style:build": "styleguidist ./scripts/styleguide.config.js build"
+    "style:build": "styleguidist ./scripts/styleguide.config.js build",
+    "rollup": "rollup --config ./scripts/rollup.conf.js",
+    "rollup-watch": "rollup --config ./scripts/rollup.conf.js --watch"
   },
   "repository": {
     "type": "git",
@@ -49,7 +51,7 @@
     "react-dom": "^16.2.0",
     "react-scripts-ts": "^2.13.0",
     "react-styleguidist": "^6.2.6",
-    "rollup": "^0.56.4",
+    "rollup": "^0.56.5",
     "rollup-plugin-typescript2": "^0.11.1",
     "run-sequence": "^1.2.2",
     "stream-combiner2": "^1.1.1",
