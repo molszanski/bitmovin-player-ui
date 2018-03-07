@@ -11,8 +11,8 @@ class SettingsPanel extends Component<Props, {}> {
   displayName: "SettingsPanel";
   render() {
     return (
-      <div className="ui-settings-panel">
-        <div className="container-wrapper">
+      <div className="bmpui-ui-settings-panel">
+        <div className="bmpui-container-wrapper">
           {this.props.children}
         </div>
       </div>

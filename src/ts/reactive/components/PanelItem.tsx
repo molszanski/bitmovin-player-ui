@@ -11,9 +11,9 @@ class PanelItem extends Component<Props, {}> {
   displayName: "PanelItem";
   render() {
     return (
-      <div className="ui-settings-panel-item">
-        <div className="container-wrapper">
-          <span className="ui-label">{this.props.label}</span>
+      <div className="bmpui-ui-settings-panel-item">
+        <div className="bmpui-container-wrapper">
+          <span className="bmpui-ui-label">{this.props.label}</span>
           {this.props.children}
         </div>
       </div>

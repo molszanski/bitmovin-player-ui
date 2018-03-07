@@ -31,6 +31,14 @@ module.exports = {
         // path.resolve(__dirname, 'src/components/PanelItem', 'index.tsx'),
         // path.resolve(__dirname, 'src/components/TitleBar', 'index.tsx'),
       ])
+    },
+    {
+      name: 'Connected',
+      components: () => ([
+        path.resolve(reactivePath, 'containers/SubtitleSettings', 'index.tsx'),
+        path.resolve(reactivePath, 'containers/AppContainer.tsx'),
+        path.resolve(reactivePath, 'containers/SubtitleSettingsPanel.tsx'),
+      ])
     }
   ],
   configureServer(app) {
