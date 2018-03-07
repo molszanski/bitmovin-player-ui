@@ -26,6 +26,8 @@ module.exports = {
         path.resolve(reactivePath, 'components/PanelItem.tsx'),
         path.resolve(reactivePath, 'components/SettingsPanel.tsx'),
         path.resolve(reactivePath, 'components/TitleBar.tsx'),
+        path.resolve(reactivePath, 'components/Label.tsx'),
+        path.resolve(reactivePath, 'components/Button.tsx'),
         // path.resolve(reactivePath, 'components/SelectBox', 'index.tsx'),
         // path.resolve(__dirname, 'src/components/SimpleSelectBox', 'index.tsx'),
         // path.resolve(__dirname, 'src/components/PanelItem', 'index.tsx'),
