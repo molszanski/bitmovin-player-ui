@@ -34,6 +34,6 @@
       "objects": "always",
       "typeLiterals": "always"
     }, "singleline": "never"}],
-    "no-unused-variable": true
+    "no-unused-variable": false
   }
 }

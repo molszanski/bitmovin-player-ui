@@ -70,6 +70,7 @@
     "preact": "^8.2.7"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   }
 }

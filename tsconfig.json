@@ -1,7 +1,4 @@
 {
-  "files": [
-    "src/ts/main.ts"
-  ],
   "compilerOptions": {
     "noImplicitAny": true,
     "target": "es5",
@@ -9,6 +6,11 @@
     "outDir": "dist/js/framework",
     "lib": ["es6", "dom", "scripthost"],
     "jsx": "react",
-    "jsxFactory": "h"
-  }
+    "jsxFactory": "h",
+    "experimentalDecorators": true
+  },
+  "include": [
+    "./src/ts/**/*.tsx",
+    "./src/ts/**/*.ts"
+  ]
 }
