@@ -63,15 +63,18 @@ export class Timeout {
         lastScheduleTime = now;
 
         // Schedule next execution by the adjusted delay
+        // @ts-ignore
         this.timeoutHandle = setTimeout(internalCallback, this.delay + delayAdjust);
       }
     };
 
     lastScheduleTime = Date.now();
+    // @ts-ignore
     this.timeoutHandle = setTimeout(internalCallback, this.delay);
   }
 
   private clearInternal(): void {
+    // @ts-ignore
     clearTimeout(this.timeoutHandle);
   }
 }

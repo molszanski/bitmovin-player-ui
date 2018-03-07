@@ -23,6 +23,7 @@
   "homepage": "https://github.com/bitmovin/bitmovin-player-ui#readme",
   "devDependencies": {
     "@types/classnames": "^2.2.3",
+    "@types/node": "^9.4.6",
     "autoprefixer": "^6.5.2",
     "babel-runtime": "^6.26.0",
     "browser-sync": "^2.18.13",
