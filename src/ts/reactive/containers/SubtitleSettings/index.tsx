@@ -6,6 +6,7 @@ import {
   fontSizeOpts,
   fontColorOpts,
   fontOpacityOpts,
+  fontFamilyOpts,
 } from './subtitle-options';
 // Types and Interfaces
 import RootStore from '../../stores/root';
@@ -58,6 +59,18 @@ const FontOpacitySelectBox = subsInjector(function({ subs }: Props) {
   );
 });
 
+const FontFamilySelectBox = subsInjector(function({ subs }: Props) {
+  return (
+    <SelectBox
+      // @ts-ignore
+      options={fontFamilyOpts}
+      onChange={(e: any) => {
+        subs.fontFamily = e.target.value;
+      }}
+    />
+  );
+});
+
 /**
  * @example ../examples/SubtitleSettings.md
  */
@@ -72,5 +85,6 @@ export {
   FontSizeSelectBox,
   FontColorSelectBox,
   FontOpacitySelectBox,
+  FontFamilySelectBox,
   SubtitleSettings as default,
 };

@@ -8,6 +8,7 @@ import {
   FontSizeSelectBox,
   FontColorSelectBox,
   FontOpacitySelectBox,
+  FontFamilySelectBox,
 } from './SubtitleSettings';
 // Interfaces
 import RootStore from '../stores/root';
@@ -35,8 +36,11 @@ class SubtitleSettingsPanel extends Component<Props, {}> {
         <PanelItem label={`${i18nFonts.fontColor}:`}>
           <FontColorSelectBox />
         </PanelItem>
-        <PanelItem label="Font Opacity">
+        <PanelItem label={`${i18nFonts.fontOpacity}:`}>
           <FontOpacitySelectBox />
+        </PanelItem>
+        <PanelItem label={`${i18nFonts.fontFamily}:`}>
+          <FontFamilySelectBox />
         </PanelItem>
       </SettingsPanel>
     );

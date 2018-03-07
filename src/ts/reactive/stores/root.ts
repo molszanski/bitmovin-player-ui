@@ -9,5 +9,8 @@ export default class RootStore {
     this.i18nStore = new Internalization(this);
     this.subtitleStore = new SubtitleStore(this);
     console.log(this);
+    // @ts-ignore
+    window.rootStore = this;
+    return this;
   }
 }

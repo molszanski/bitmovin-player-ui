@@ -35,3 +35,13 @@ optionPusher(fontOpacityOpts, '100', '100%');
 optionPusher(fontOpacityOpts, '75', '75%');
 optionPusher(fontOpacityOpts, '50', '50%');
 optionPusher(fontOpacityOpts, '25', '25%');
+
+export const fontFamilyOpts: Array<SelectBoxOption> = [];
+optionPusher(fontFamilyOpts, null, 'default');
+optionPusher(fontFamilyOpts, 'monospacedserif', 'monospaced serif');
+optionPusher(fontFamilyOpts, 'proportionalserif', 'proportional serif');
+optionPusher(fontFamilyOpts, 'monospacedsansserif', 'monospaced sans serif');
+optionPusher(fontFamilyOpts, 'proportionalsansserif', 'proportional sans serif');
+optionPusher(fontFamilyOpts, 'casual', 'casual');
+optionPusher(fontFamilyOpts, 'cursive', 'cursive');
+optionPusher(fontFamilyOpts, 'smallcapital', 'small capital');
