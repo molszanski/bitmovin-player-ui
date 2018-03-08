@@ -8,7 +8,7 @@
     "prepare": "gulp npm-prepare",
     "style": "styleguidist --config ./scripts/styleguide.config.js server",
     "style:build": "styleguidist ./scripts/styleguide.config.js build",
-    "rollup": "rollup --config ./scripts/rollup.conf.js",
+    "rollup": "NODE_ENV=production rollup --config ./scripts/rollup.conf.js",
     "rollup-watch": "rollup --config ./scripts/rollup.conf.js --watch"
   },
   "repository": {
@@ -54,6 +54,7 @@
     "react-styleguidist": "^6.2.6",
     "rollup": "^0.56.5",
     "rollup-plugin-typescript2": "^0.11.1",
+    "rollup-plugin-uglify": "^3.0.0",
     "run-sequence": "^1.2.2",
     "stream-combiner2": "^1.1.1",
     "tsify": "^2.0.2",
