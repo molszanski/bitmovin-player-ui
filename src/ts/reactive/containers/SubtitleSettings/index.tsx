@@ -22,54 +22,23 @@ const subsInjector = function(target: any) {
   }))(observer(target));
 };
 
-const FontSizeSelectBox = subsInjector(function({ subs }: Props) {
-  return (
-    <SelectBox
-      // @ts-ignore
-      options={fontSizeOpts}
-      onChange={(e: any) => {
-        console.log(subs);
-        subs.fontSize = e.target.value;
-      }}
-    />
-  );
-});
+const subFactory = function(subName: string, defaults: any) {
+  return subsInjector(function({ subs }: Props) {
+    return (
+      <SelectBox
+        options={defaults}
+        onChange={(e: any) => {
+          subs[subName] = e.target.value;
+        }}
+      />
+    );
+  });
+};
 
-const FontColorSelectBox = subsInjector(function({ subs }: Props) {
-  return (
-    <SelectBox
-      // @ts-ignore
-      options={fontColorOpts}
-      onChange={(e: any) => {
-        subs.fontColor = e.target.value;
-      }}
-    />
-  );
-});
-
-const FontOpacitySelectBox = subsInjector(function({ subs }: Props) {
-  return (
-    <SelectBox
-      // @ts-ignore
-      options={fontOpacityOpts}
-      onChange={(e: any) => {
-        subs.fontOpacity = e.target.value;
-      }}
-    />
-  );
-});
-
-const FontFamilySelectBox = subsInjector(function({ subs }: Props) {
-  return (
-    <SelectBox
-      // @ts-ignore
-      options={fontFamilyOpts}
-      onChange={(e: any) => {
-        subs.fontFamily = e.target.value;
-      }}
-    />
-  );
-});
+const FontSizeSelectBox = subFactory('fontSize', fontSizeOpts);
+const FontColorSelectBox = subFactory('fontColor', fontColorOpts);
+const FontOpacitySelectBox = subFactory('fontOpacity', fontOpacityOpts);
+const FontFamilySelectBox = subFactory('fontFamily', fontFamilyOpts);
 
 /**
  * @example ../examples/SubtitleSettings.md

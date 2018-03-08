@@ -7,7 +7,7 @@ export interface SelectBoxOption {
 
 export interface Props {
   options: Array<SelectBoxOption>;
-  onChange?(): void;
+  onChange?(event: any): void;
 }
 
 /**
