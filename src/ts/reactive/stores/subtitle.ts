@@ -44,7 +44,7 @@ export class SubtitleStore implements SubtitleProps {
   @observable public windowColor: string = 'null';
   @observable public windowOpacity: string = 'null';
 
-  constructor(rootStore: any) {
+  constructor(rootStore: RootStore) {
     this.root = rootStore;
     this.localStorageKey = 'temp-subtitlesettings';
 
