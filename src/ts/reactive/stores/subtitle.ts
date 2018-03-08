@@ -1,39 +1,46 @@
-import { observable, action } from 'mobx';
+import { observable, action, IObservableValue } from 'mobx';
+import { StorageUtils } from '../../storageutils';
+import { RootStore } from './root';
 
 export interface SubtitleSettings {
-  fontColor?: string;
-  fontOpacity?: string;
-  fontFamily?: string;
-  fontSize?: string;
-  characterEdge?: string;
-  backgroundColor?: string;
-  backgroundOpacity?: string;
-  windowColor?: string;
-  windowOpacity?: string;
+  fontColor: string;
+  fontOpacity: string;
+  fontFamily: string;
+  fontSize: string;
+  characterEdge: string;
+  backgroundColor: string;
+  backgroundOpacity: string;
+  windowColor: string;
+  windowOpacity: string;
 }
 
-const defaults: SubtitleSettings = {
-  fontColor: 'null',
-  fontOpacity: 'null',
-  fontFamily: 'null',
-  fontSize: 'null',
-  characterEdge: 'null',
-  backgroundColor: 'null',
-  backgroundOpacity: 'null',
-  windowColor: 'null',
-  windowOpacity: 'null',
-};
+const configurableProperties = [
+  'fontColor',
+  'fontOpacity',
+  'fontFamily',
+  'fontSize',
+  'characterEdge',
+  'backgroundColor',
+  'backgroundOpacity',
+  'windowColor',
+  'windowOpacity',
+];
 
-export default class SubtitleStore implements SubtitleSettings {
-  private root: any;
+export interface Properties extends SubtitleSettings {
+  [name: string]: string;
+}
 
-  // Some properties that other elements can use
+export class SubtitleStore implements SubtitleSettings {
+  [name: string]: any; // So we can iterate
+  private root: RootStore;
+  private localStorageKey: string;
+  private userSettings: SubtitleSettings;
+
   @observable public fontColor: string;
   @observable public fontOpacity: string;
   @observable public fontFamily: string;
   @observable public fontSize: string;
   @observable public characterEdge: string;
-
   @observable public backgroundColor: string;
   @observable public backgroundOpacity: string;
   @observable public windowColor: string;
@@ -41,15 +48,32 @@ export default class SubtitleStore implements SubtitleSettings {
 
   constructor(rootStore: any) {
     this.root = rootStore;
+    this.localStorageKey = 'temp-subtitlesettings';
 
     // Provide some defaults
-    Object.assign(this, defaults);
+    for (let propertyName of configurableProperties) {
+      this[propertyName] = observable.box('null');
+    }
+    return this;
   }
 
   // @action
   // public reset(): void {
-  //   for (let propertyName in defaults) {
-  //     this[propertyName] = '12';
+  //   for (let propertyName of SubtitleProperties) {
+  //     this[propertyName] = 'null';
+  //   }
+  // }
+
+  // public saveToLocalStorage(): void {
+  //   StorageUtils.setObject(this.localStorageKey, this.userSettings);
+  // }
+
+  // public loadSettingsFromLocalStorage(): void {
+  //   this.userSettings = StorageUtils.getObject<SubtitleSettings>(this.localStorageKey) || {};
+
+  //   // Apply the loaded settings
+  //   for (let property in this.userSettings) {
+  //     this._properties[property].value = (<any>this.userSettings)[property];
   //   }
   // }
 }

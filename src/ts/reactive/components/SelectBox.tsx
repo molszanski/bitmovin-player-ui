@@ -8,6 +8,7 @@ export interface SelectBoxOption {
 export interface Props {
   options: Array<SelectBoxOption>;
   onChange?(event: any): void;
+  value?: string;
 }
 
 /**
@@ -20,6 +21,7 @@ class SelectBox extends Component<Props, {}> {
       <select
         className="bmpui-ui-selectbox"
         onChange={this.props.onChange || undefined}
+        value={this.props.value}
       >
         {this.props.options.map((o: SelectBoxOption, i: number) => (
           <option value={o.value}>{o.label}</option>

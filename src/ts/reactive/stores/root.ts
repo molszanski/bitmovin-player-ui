@@ -1,7 +1,7 @@
-import SubtitleStore from "./subtitle";
-import {Internalization} from "./i18n";
+import { SubtitleStore } from './subtitle';
+import { Internalization } from './i18n';
 
-export default class RootStore {
+export class RootStore {
   public subtitleStore: SubtitleStore;
   public i18nStore: Internalization;
 

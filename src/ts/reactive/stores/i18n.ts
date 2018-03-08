@@ -1,8 +1,8 @@
-import { observable, action } from "mobx";
-import rootStore from "./root";
-import { Translation, Settings, Labels } from "./translations/types";
-import { en } from "./translations/en";
-import { de } from "./translations/de";
+import { observable, action } from 'mobx';
+import { RootStore } from './root';
+import { Translation, Settings, Labels } from './translations/types';
+import { en } from './translations/en';
+import { de } from './translations/de';
 
 export class NewTranslation implements Translation {
   public language: string;
@@ -15,13 +15,13 @@ export class NewTranslation implements Translation {
 }
 
 export class Internalization {
-  private root: rootStore;
+  private root: RootStore;
 
   // Some properties that other elements can use
   public language: string;
   @observable public q: NewTranslation;
 
-  constructor(rootStore: rootStore) {
+  constructor(rootStore: RootStore) {
     this.root = rootStore;
     this.q = new NewTranslation(en);
     return this;
@@ -32,11 +32,11 @@ export class Internalization {
   }
 
   @action
-  public  changeToGerman() {
+  public changeToGerman() {
     this.q = new NewTranslation(de);
   }
   @action
-  public  changeToEnglish() {
+  public changeToEnglish() {
     this.q = new NewTranslation(en);
   }
 }

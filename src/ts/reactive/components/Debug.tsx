@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import { observer, inject } from 'mobx-preact';
 // Types and interfaces
-import RootStore from '../stores/root';
-import SubtitleStore from '../stores/subtitle';
+import { RootStore } from '../stores/root';
+import { SubtitleStore } from '../stores/subtitle';
 import { Internalization } from '../stores/i18n';
 
 export class MiniFrame extends Component<{}, {}> {

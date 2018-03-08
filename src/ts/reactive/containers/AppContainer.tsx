@@ -2,8 +2,7 @@
 import { h, Component } from 'preact';
 import { SelectBox, SelectBoxOption } from '../components/SelectBox';
 import { observer, Provider } from 'mobx-preact';
-import RootStore from '../stores/root';
-
+import { RootStore } from '../stores/root';
 
 /**
  * @example ./examples/AppContainer.md

@@ -9,8 +9,8 @@ import {
   fontFamilyOpts,
 } from './subtitle-options';
 // Types and Interfaces
-import RootStore from '../../stores/root';
-import SubtitleStore from '../../stores/subtitle';
+import { RootStore } from '../../stores/root';
+import { SubtitleStore } from '../../stores/subtitle';
 
 interface Props {
   subs: SubtitleStore;
@@ -30,6 +30,7 @@ const subFactory = function(subName: string, defaults: any) {
         onChange={(e: any) => {
           subs[subName] = e.target.value;
         }}
+        value={subs[subName]}
       />
     );
   });

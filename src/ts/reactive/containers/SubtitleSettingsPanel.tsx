@@ -11,8 +11,8 @@ import {
   FontFamilySelectBox,
 } from './SubtitleSettings';
 // Interfaces
-import RootStore from '../stores/root';
-import SubtitleStore from '../stores/subtitle';
+import { RootStore } from '../stores/root';
+import { SubtitleStore } from '../stores/subtitle';
 import { Internalization } from '../stores/i18n';
 
 export interface Props {
