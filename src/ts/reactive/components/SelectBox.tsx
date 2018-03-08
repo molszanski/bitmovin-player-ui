@@ -20,7 +20,7 @@ class SelectBox extends Component<Props, {}> {
     return (
       <select
         className="bmpui-ui-selectbox"
-        onChange={this.props.onChange || undefined}
+        onChange={this.props.onChange}
         value={this.props.value}
       >
         {this.props.options.map((o: SelectBoxOption, i: number) => (

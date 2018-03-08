@@ -13,22 +13,22 @@ export class UiState {
   }
 
   @action
-  openSettingsPanel = (): void => {
+  public openSettingsPanel(): void {
     this.settingsPanelOpen = true;
-  };
+  }
 
   @action
-  closeSettingsPanel = (): void => {
+  public closeSettingsPanel(): void {
     this.settingsPanelOpen = false;
-  };
+  }
 
   @action
-  openSubtitlePanel = (): void => {
+  public openSubtitlePanel(): void {
     this.subtitlePanelOpen = true;
-  };
+  }
 
   @action
-  closeSubtitlePanel = (): void => {
+  public closeSubtitlePanel(): void {
     this.subtitlePanelOpen = false;
-  };
+  }
 }

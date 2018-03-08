@@ -59,6 +59,7 @@ export class SubtitleStore implements SubtitleProps {
 
   @action
   public reset(): void {
+    console.log('resetting settings');
     for (let propertyName of configurableProperties) {
       this[propertyName] = 'null';
     }

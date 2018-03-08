@@ -1,19 +1,27 @@
 import { h, Component } from 'preact';
+import * as classnames from 'classnames';
 
 export interface Props {
-  label: string;
+  label?: string;
+  classes?: [string] | string;
 }
 
 /**
  * @example ./examples/PanelItem.md
  */
 class PanelItem extends Component<Props, {}> {
-  displayName: "PanelItem";
+  displayName: 'PanelItem';
   render() {
+    let allNames: string = classnames(
+      'bmpui-ui-settings-panel-item',
+      this.props.classes
+    );
     return (
-      <div className="bmpui-ui-settings-panel-item">
+      <div className={allNames}>
         <div className="bmpui-container-wrapper">
-          <span className="bmpui-ui-label">{this.props.label}</span>
+          {this.props.label && (
+            <span className="bmpui-ui-label">{this.props.label}</span>
+          )}
           {this.props.children}
         </div>
       </div>

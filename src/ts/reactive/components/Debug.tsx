@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { observer, inject } from 'mobx-preact';
+import * as classnames from 'classnames';
 // Types and interfaces
 import { RootStore } from '../stores/root';
 import { SubtitleStore } from '../stores/subtitle';
@@ -40,14 +41,14 @@ export class PlayerFrame extends Component<{}, {}> {
 }
 
 export interface ClassNameProps {
-  classnames?: string;
+  classes?: string;
 }
 export class ModernFrame extends Component<ClassNameProps, {}> {
   displayName: 'ModernFrame';
   render() {
     return (
       <div className="debug ">
-        <div className={'bmpui-ui-skin-modern ' + this.props.classnames}>
+        <div className={classnames('bmpui-ui-skin-modern ', this.props.classes)}>
           {this.props.children}
         </div>
       </div>
@@ -98,4 +99,15 @@ export class LanguageChanger extends Component<{ i18n?: Internalization }, {}> {
       </div>
     );
   }
+}
+
+export function DummySelect() {
+  return (
+    <select className="bmpui-ui-selectbox">
+      <option value="null">default</option>
+      <option value="50">50%</option>
+      <option value="75">75%</option>
+      <option value="400">400%</option>
+    </select>
+  );
 }

@@ -23,7 +23,7 @@ const options = [
   }
 ];
 
-<ModernFrame classnames='carbon'>
-  <SelectBox options={options} />
+<ModernFrame classes='carbon'>
+  <SelectBox options={options} value="null"/>
 </ModernFrame>;
 ```

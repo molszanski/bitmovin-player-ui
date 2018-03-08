@@ -21,6 +21,7 @@ class AppContainer extends Component<{}, {}> {
       <Provider
         subtitleStore={this.rootStore.subtitleStore}
         i18n={this.rootStore.i18nStore}
+        ui={this.rootStore.ui}
       >
         {this.props.children}
       </Provider>
