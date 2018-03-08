@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 import { RootStore } from './root';
-import { Translation, Settings, Labels } from './translations/types';
+import { Translation, Settings, Labels, Messages } from './translations/types';
 import { en } from './translations/en';
 import { de } from './translations/de';
 
@@ -8,6 +8,7 @@ export class NewTranslation implements Translation {
   public language: string;
   public settings: Settings;
   public labels: Labels;
+  public messages: Messages;
 
   constructor(translation: Translation) {
     Object.assign(this, translation);

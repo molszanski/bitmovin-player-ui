@@ -95,6 +95,7 @@ export class LanguageChanger extends Component<{ i18n?: Internalization }, {}> {
             To English
           </div>
           <span>Lng: {i18n.q.language}</span>
+          <div>Sample message: <pre>{i18n.q.messages.connectingTo('Mars')}</pre></div>
         </div>
       </div>
     );
