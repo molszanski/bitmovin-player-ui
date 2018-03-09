@@ -1,5 +1,5 @@
 import { h, Component, cloneElement } from 'preact';
-import * as classnames from 'classnames';
+import { classnames } from '../utils';
 import { Timeout } from '../../timeout';
 
 export interface Props {

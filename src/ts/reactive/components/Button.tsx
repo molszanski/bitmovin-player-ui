@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Label } from './Label';
-import * as classnames from 'classnames';
+import { classnames } from '../utils';
 
 export interface Props {
   classes?: [string] | string;

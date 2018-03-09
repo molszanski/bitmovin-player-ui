@@ -1,7 +1,7 @@
 /// <reference path="../external.d.ts" />
 import { h, Component } from 'preact';
 import { observer, inject } from 'mobx-preact';
-import * as classnames from 'classnames';
+import { classnames } from '../utils';
 import {
   FontSizeSelectBox,
   FontColorSelectBox,
