@@ -14,17 +14,18 @@ export interface Props {
 /**
  * @example ./islandSubtitlePanel.md
  */
-@inject('ui', 'i18n')
+@inject('ui')
 @observer
 class IslandSubSettings extends Component<Props, {}> {
   displayName: string = 'IslandSubSettings';
   render() {
-    // <Animate duration={1000} show={state.show}>
-    let { ui } = this.props;
-    console.log('island this: ', this);
-
     return (
-      <Animate duration={50000} show={ui.subtitlePanelOpen} headless fadeOut='bmpui-hidden'>
+      <Animate
+        duration={500}
+        show={this.props.ui.subtitlePanelOpen}
+        headless
+        fadeOut="bmpui-hidden"
+      >
         <SubtitleSettingsPanel />
       </Animate>
     );
@@ -32,6 +33,3 @@ class IslandSubSettings extends Component<Props, {}> {
 }
 
 export { IslandSubSettings, IslandSubSettings as default };
-
-// * <Animate duration={500} show={ui.subtitlePanelOpen}>
-// </Animate>

@@ -87,6 +87,7 @@ class Animate extends Component<Props, State> {
       // Pass props down the chain
       if (this.state.display === true) {
         let child = this.props.children[0];
+        child.attributes = child.attributes || {};
         child.attributes.classes = classnames(child.attributes.classes, ui);
         return cloneElement(child, child.attributes);
       } else {
