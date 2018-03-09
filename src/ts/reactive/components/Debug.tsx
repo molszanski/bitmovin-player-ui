@@ -6,6 +6,7 @@ import * as classnames from 'classnames';
 import { RootStore } from '../stores/root';
 import { SubtitleStore } from '../stores/subtitle';
 import { Internalization } from '../stores/i18n';
+import { UiState } from '../stores/ui';
 
 export class MiniFrame extends Component<{}, {}> {
   displayName: 'MiniFrame';
@@ -49,7 +50,9 @@ export class ModernFrame extends Component<ClassNameProps, {}> {
   render() {
     return (
       <div className="debug ">
-        <div className={classnames('bmpui-ui-skin-modern ', this.props.classes)}>
+        <div
+          className={classnames('bmpui-ui-skin-modern ', this.props.classes)}
+        >
           {this.props.children}
         </div>
       </div>
@@ -96,7 +99,33 @@ export class LanguageChanger extends Component<{ i18n?: Internalization }, {}> {
             To English
           </div>
           <span>Lng: {i18n.q.language}</span>
-          <div>Sample message: <pre>{i18n.q.messages.connectingTo('Mars')}</pre></div>
+          <div>
+            Sample message: <pre>{i18n.q.messages.connectingTo('Mars')}</pre>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+@inject('ui')
+@observer
+export class PanelControls extends Component<{ ui?: UiState }, {}> {
+  displayName: string = 'PanelControls';
+  render() {
+    let ui = this.props.ui!;
+    return (
+      <div className="debug">
+        <div className="panel-controls">
+          <div className="btn" onClick={() => ui.openSubtitleSettingsPanel()}>
+            Open Subs Panel
+          </div>
+          <div className="btn" onClick={() => ui.closeSubtitleSettingsPanel()}>
+            Close Subs Panel
+          </div>
+          <div className="btn" onClick={() => ui.togglSubs()}>
+            Toggle
+          </div>
         </div>
       </div>
     );

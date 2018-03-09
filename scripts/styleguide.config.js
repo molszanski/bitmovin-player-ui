@@ -37,6 +37,13 @@ module.exports = {
         path.resolve(reactivePath, 'containers/AppContainer.tsx'),
         path.resolve(reactivePath, 'containers/SubtitleSettingsPanel.tsx'),
       ])
+    },
+    {
+      name: 'Islands',
+      content: path.resolve(reactivePath, 'islands/Readme.md'),
+      components: () => ([
+        path.resolve(reactivePath, 'islands/islandSubtitlePanel.tsx'),
+      ])
     }
   ],
   configureServer(app) {

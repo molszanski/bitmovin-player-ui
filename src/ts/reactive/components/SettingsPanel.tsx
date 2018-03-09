@@ -1,7 +1,9 @@
 import { h, Component } from 'preact';
+import * as classnames from 'classnames';
 
 export interface Props {
   text?: string;
+  classes?: string;
 }
 
 /**
@@ -10,8 +12,9 @@ export interface Props {
 class SettingsPanel extends Component<Props, {}> {
   displayName: "SettingsPanel";
   render() {
+    let cx = classnames('bmpui-ui-settings-panel', this.props.classes);
     return (
-      <div className="bmpui-ui-settings-panel">
+      <div className={cx}>
         <div className="bmpui-container-wrapper">
           {this.props.children}
         </div>

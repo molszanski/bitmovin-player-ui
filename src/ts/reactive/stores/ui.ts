@@ -23,12 +23,18 @@ export class UiState {
   }
 
   @action
-  public openSubtitlePanel(): void {
+  public openSubtitleSettingsPanel(): void {
     this.subtitlePanelOpen = true;
   }
 
   @action
-  public closeSubtitlePanel(): void {
+  public closeSubtitleSettingsPanel(): void {
     this.subtitlePanelOpen = false;
   }
+
+  @action
+  public togglSubs(): void {
+    this.subtitlePanelOpen = !this.subtitlePanelOpen;
+  }
+
 }

@@ -27,7 +27,7 @@
         100% { opacity: 1; }
       }
     }
-    
+
 
     .fade-out {
       animation: fadeout 2s linear forwards;
@@ -37,7 +37,7 @@
       }
     }
   }
-  
+
   .contrast {
     background-color: antiquewhite;
   }
@@ -77,6 +77,27 @@
       height: 50px;
       position: absolute;
       border: 1px navy dashed;
+    }
+  }
+  .panel-controls {
+    border: 1px #FFF dotted;
+
+    .btn {
+      margin: 4px;
+      display: inline-block;
+      color: rgb(232, 250, 74);
+      border: 1px solid #ccc;
+      background: rgb(75, 81, 168);
+      box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      vertical-align: middle;
+      max-width: 100px;
+      padding: 5px;
+      text-align: center;
+      &:active {
+        color: rgb(83, 156, 122);
+        box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+      }
     }
   }
 

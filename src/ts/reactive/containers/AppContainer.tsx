@@ -8,13 +8,14 @@ import { RootStore } from '../stores/root';
  * @example ./examples/AppContainer.md
  */
 @observer
-class AppContainer extends Component<{}, {}> {
+class AppContainer extends Component<{rootStore?: RootStore}, {}> {
   displayName: 'AppContainer';
   public rootStore: RootStore;
 
   constructor(props: any, context: any) {
     super(props, context);
-    this.rootStore = new RootStore();
+    this.rootStore = props.rootStore || new RootStore();
+    return this;
   }
   render() {
     return (
