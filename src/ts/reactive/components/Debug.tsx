@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import { observer, inject } from 'mobx-preact';
 import * as classnames from 'classnames';
+// require('preact/debug');
 // Types and interfaces
 import { RootStore } from '../stores/root';
 import { SubtitleStore } from '../stores/subtitle';
