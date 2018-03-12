@@ -13,6 +13,7 @@ import {NoArgs, EventDispatcher, CancelEventArgs} from './eventdispatcher';
 import {SettingsToggleButton} from './components/settingstogglebutton';
 import {SettingsPanel, SettingsPanelItem} from './components/settingspanel';
 // import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel';
+import {RootStore} from './reactive/stores/root';
 import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel-react';
 import {SubtitleSettingsLabel} from './components/subtitlesettings/subtitlesettingslabel';
 import {SubtitleSettingsOpenButton} from './components/subtitlesettings/subtitlesettingsopenbutton';
@@ -846,6 +847,7 @@ export class UIInstanceManager {
   private playerWrapper: PlayerWrapper;
   private ui: UIContainer;
   private config: UIConfig;
+  private rootStore: RootStore;
 
   private events = {
     onConfigured: new EventDispatcher<UIContainer, NoArgs>(),
@@ -863,6 +865,11 @@ export class UIInstanceManager {
     this.playerWrapper = new PlayerWrapper(player);
     this.ui = ui;
     this.config = config;
+    this.rootStore = new RootStore();
+  }
+
+  getRootStore(): RootStore {
+    return this.rootStore;
   }
 
   getConfig(): UIConfig {

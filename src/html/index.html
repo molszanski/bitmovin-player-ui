@@ -42,6 +42,13 @@
         </div>
 
         <div class="card-block">
+          <h4 class="card-title">Language temp demo</h4>
+          <h6 class="card-title">(Only subtitles)</h4>
+          <button class="btn btn-primary btn-sm" id='to-english'>To English</button>
+          <button class="btn btn-primary btn-sm" id='to-german'>To German</button>
+        </div>
+
+        <div class="card-block">
             <h4 class="card-title">Playback Control</h4>
 
             <p class="card-text" id="playback-controls"></p>
@@ -262,6 +269,22 @@
       console.log(errorEvent);
     });
   };
+
+  // Configure lang buttons
+  var b1 = $('#to-english');
+  b1.click(function() {
+  for (var ui of uiManager.uiInstanceManagers) {
+    var store = ui.getRootStore();
+    store.i18nStore.changeToEnglish();
+  }
+  });
+  var b1 = $('#to-german');
+  b1.click(function() {
+  for (var ui of uiManager.uiInstanceManagers) {
+    var store = ui.getRootStore();
+    store.i18nStore.changeToGerman();
+  }
+  });
 
   playerSetup(config);
 
