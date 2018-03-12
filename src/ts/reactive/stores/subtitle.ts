@@ -48,6 +48,16 @@ export class SubtitleStore implements SubtitleProps {
     this.root = rootStore;
     this.localStorageKey = 'temp-subtitlesettings';
 
+    this.fontColor = 'null';
+    this.fontOpacity = 'null';
+    this.fontFamily = 'null';
+    this.fontSize = 'null';
+    this.characterEdge = 'null';
+    this.backgroundColor = 'null';
+    this.backgroundOpacity = 'null';
+    this.windowColor = 'null';
+    this.windowOpacity = 'null';
+
     this.loadSettingsFromLocalStorage();
     // Run on every property change
     this.disposer = autorun(() => {
@@ -75,7 +85,8 @@ export class SubtitleStore implements SubtitleProps {
 
   @action
   public loadSettingsFromLocalStorage(): void {
-    let cache: SubtitleProps = StorageUtils.getObject<SubtitleProps>(this.localStorageKey) || {};
+    let cache: SubtitleProps =
+      StorageUtils.getObject<SubtitleProps>(this.localStorageKey) || {};
 
     // Apply the loaded settings
     for (let propertyName of configurableProperties) {

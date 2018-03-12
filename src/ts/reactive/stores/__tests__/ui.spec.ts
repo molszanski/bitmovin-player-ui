@@ -1,9 +1,12 @@
 import { UiState } from '../ui';
+import { RootStore } from '../root';
 
-let ui: UiState = {};
+let root: RootStore = new RootStore();
+let ui: UiState = root.ui;
 
 beforeEach(() => {
-  ui = new UiState();
+  root = new RootStore();
+  ui = root.ui;
 });
 
 test('Settings panel should be closed', () => {
