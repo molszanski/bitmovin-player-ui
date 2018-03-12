@@ -13,8 +13,8 @@ import {NoArgs, EventDispatcher, CancelEventArgs} from './eventdispatcher';
 import {SettingsToggleButton} from './components/settingstogglebutton';
 import {SettingsPanel, SettingsPanelItem} from './components/settingspanel';
 // import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel';
-import {RootStore} from './reactive/stores/root';
 import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel-react';
+import {RootStore} from './reactive/stores/root';
 import {SubtitleSettingsLabel} from './components/subtitlesettings/subtitlesettingslabel';
 import {SubtitleSettingsOpenButton} from './components/subtitlesettings/subtitlesettingsopenbutton';
 import {VideoQualitySelectBox} from './components/videoqualityselectbox';
@@ -1187,4 +1187,3 @@ class PlayerWrapper {
     }
   }
 }
-

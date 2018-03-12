@@ -3,7 +3,9 @@ import { SubtitleOverlay } from '../subtitleoverlay';
 import { UIInstanceManager } from '../../uimanager';
 import { DOM } from '../../dom';
 import { h, render, VNode } from 'preact';
+import { autorun } from 'mobx';
 import { RootStore } from '../../reactive/stores/root';
+import { OverlayCSS } from '../../reactive/stores/overlay';
 import { AppContainer } from '../../reactive/containers/AppContainer';
 import { IslandSubSettings } from '../../reactive/islands/islandSubtitlePanel';
 
@@ -62,29 +64,29 @@ export class SubtitleSettingsPanel extends SettingsPanel {
     console.log('configure', uimanager.getRootStore());
     this.rootStore = uimanager.getRootStore();
     this.reactRender();
-    // uimanager.getRootStore()
-    // uimanager.getRootStore();
-    // uimana
-    // Need to move this model to a sep. instance
-    // Handle css overlayChanges. Again, prototype only
-    // uiStore.subscribe((state: any) => {
-    //   let subs = state.subs;
-    //   let newCss: string[] = [];
 
-    //   // Fill with data
-    //   if (subs.size !== null) {
-    //     newCss.push(`fontsize-${subs.size}`);
-    //   }
+    // Reactively subscribe to changes
+    let disposer: any = autorun(() => {
+      let overlay: OverlayCSS = this.rootStore.overlay;
+      let newCss: string[] = [];
 
-    //   // Remove prev, add new
-    //   this.lastUsedCss.forEach((e: string) => {
-    //     this.overlay.getDomElement().removeClass(e);
-    //   });
-    //   newCss.forEach((e: string) => {
-    //     this.overlay.getDomElement().addClass(this.prefixCss(e));
-    //   });
-    //   this.lastUsedCss = newCss;
-    // });
+      // Debug stuff
+      console.log('Updating font size class: ', overlay.fontSizeClass);
+
+      // Fill with data
+      newCss.push(overlay.fontSizeClass);
+      newCss.push(overlay.fontFamilyClass);
+      newCss.push(overlay.fontColorClass);
+
+      // Remove prev, add new
+      this.lastUsedCss.forEach((e: string) => {
+        this.overlay.getDomElement().removeClass(this.prefixCss(e));
+      });
+      newCss.forEach((e: string) => {
+        this.overlay.getDomElement().addClass(this.prefixCss(e));
+      });
+      this.lastUsedCss = newCss;
+    });
 
     this.onShow.subscribe(() => {
       this.rootStore.ui.openSubtitleSettingsPanel();
