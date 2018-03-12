@@ -10,7 +10,7 @@ export default {
   input: 'src/ts/main.ts',
   output: [
     {
-      file: 'dist/js/bitmovinplayer-ui.min.iife.js',
+      file: 'dist/js/bitmovinplayer-ui.min.js',
       format: 'iife',
       sourcemap: true,
     },

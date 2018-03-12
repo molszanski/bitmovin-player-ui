@@ -8,7 +8,7 @@
     "jest": "jest",
     "prepare": "gulp npm-prepare",
     "style": "styleguidist --config ./scripts/styleguide.config.js server",
-    "style:build": "styleguidist ./scripts/styleguide.config.js build",
+    "style:build": "styleguidist --config ./scripts/styleguide.config.js build",
     "rollup": "cross-env NODE_ENV=production rollup --config ./scripts/rollup.conf.js",
     "rollup-watch": "rollup --config ./scripts/rollup.conf.js --watch"
   },
