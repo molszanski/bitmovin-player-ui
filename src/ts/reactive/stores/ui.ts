@@ -36,5 +36,4 @@ export class UiState {
   public togglSubs(): void {
     this.subtitlePanelOpen = !this.subtitlePanelOpen;
   }
-
 }

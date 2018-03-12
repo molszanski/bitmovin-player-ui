@@ -3,7 +3,7 @@ import typescript from 'rollup-plugin-typescript2';
 import uglify from 'rollup-plugin-uglify';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
-import Visualizer from 'rollup-plugin-visualizer';
+// import Visualizer from 'rollup-plugin-visualizer';
 
 // resolve({ jsnext: true })
 export default {
@@ -25,6 +25,6 @@ export default {
     }),
     typescript(),
     uglify(),
-    Visualizer({ filename: 'dist/stats.html' }),
+    // Visualizer({ filename: 'dist/stats.html' }),
   ],
 };
