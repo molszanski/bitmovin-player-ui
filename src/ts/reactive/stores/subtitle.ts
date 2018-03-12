@@ -90,7 +90,10 @@ export class SubtitleStore implements SubtitleProps {
 
     // Apply the loaded settings
     for (let propertyName of configurableProperties) {
-      this[propertyName] = cache[propertyName];
+      // Don't set undefined
+      if (typeof cache[propertyName] === 'string') {
+        this[propertyName] = cache[propertyName];
+      }
     }
   }
 }
